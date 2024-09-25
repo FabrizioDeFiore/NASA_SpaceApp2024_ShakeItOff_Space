@@ -1,0 +1,17 @@
+Important definitions for the project 
+Reference: https://www.youtube.com/watch?v=KVlt0ar7vPk   Basic Geophysics: Artificial Intelligence in Seismology
+- Picking = determination of phase arrival
+- Seismic automatic picker routines are based on manual feature extractions
+they extract specific proprietis of the trace wich are correlated to characterise different seismic phases such as amplitude 
+-STA LTA 
+Any values of the STA/LTA ratioo above a pre-deifned cut-off threshold are interpreted as a phase arrival
+artificial neural netw
+Machine Learning / Supervised Learning Process
+1 Deriving netowrk architecture = defines how many layers build the neural network and how they process the data
+2 Training on classified dataset = 
+3 Applying on new data
+CNN 
+they reduce and condese the data until the most appropriate feature to characterize the (goal) are apparent
+Feature map 
+durin g this the value in the convolutional filter are being iterated until the error in the CNN prediction is at minimum 
+when compared against the true classification of the data

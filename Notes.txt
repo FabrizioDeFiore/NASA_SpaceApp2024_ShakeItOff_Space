@@ -1,4 +1,12 @@
-Important definitions for the project 
+Important documentation 
+
+Trigger/Picker docs 	https://docs.obspy.org/tutorial/code_snippets/trigger_tutorial.html
+CNN video tut 		https://www.youtube.com/watch?v=Lakz2MoHy6o
+AI in seismology video 	https://www.youtube.com/watch?v=KVlt0ar7vPk
+
+
+Important notes for the project 
+
 Reference: https://www.youtube.com/watch?v=KVlt0ar7vPk   Basic Geophysics: Artificial Intelligence in Seismology
 - Picking = determination of phase arrival
 - Seismic automatic picker routines are based on manual feature extractions

@@ -23,3 +23,18 @@ they reduce and condese the data until the most appropriate feature to character
 Feature map 
 durin g this the value in the convolutional filter are being iterated until the error in the CNN prediction is at minimum 
 when compared against the true classification of the data
+
+
+The tedies part is to convert the csv or the seed file to a training dataset. 
+Load csv the data column as input x, then use the arrival time as the output y.
+The output should be of the same size as input. Y
+You can create an 0 array that has the same length as x and set the arrival time to 1. 
+Then use a CNN f to map from x to y: y = f(x). 
+There is an additional challenge about training, that is, for y, you have too many 0 but just a 1. it is very unblanced. 
+If you try it you will see the model prefers to output y=0 because it is a lazy but effective strategy to reduce error. 
+So you may need to adjust the loss function to emphasis more on false negative. 
+Then it should work.
+There are another part is for the STA and LTA windows. The two parameters can be learned in the neural network.
+STA and LTA window size can be viewed as the variance (no statistic meaning) of a gaussian function. 
+Then the neural network needs to learn the variance. This will adapt STA and LTA with CNN
+

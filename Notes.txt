@@ -38,3 +38,12 @@ There are another part is for the STA and LTA windows. The two parameters can be
 STA and LTA window size can be viewed as the variance (no statistic meaning) of a gaussian function. 
 Then the neural network needs to learn the variance. This will adapt STA and LTA with CNN
 
+
+get data ready(turn into sensors)
+build the model (tu suit your problem){pick a loss function & optimizer, build a training loop}
+fit the model to the data and make prediction
+evaluate the model 
+improve through experimentation
+save and reload your trained model
+
+

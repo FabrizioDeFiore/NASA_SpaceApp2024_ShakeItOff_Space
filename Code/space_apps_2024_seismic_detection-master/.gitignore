@@ -1,9 +1,0 @@
-data/
-data/*
-downsampled_signals_and_samples/
-downsampled_signals_and_samples/*
-raw_signals_and_samples/
-raw_signals_and_samples/*
-*.csv
-__pycache__
-.ipynb_checkpoints

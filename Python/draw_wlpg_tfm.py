@@ -17,7 +17,7 @@ subaux = 'S12_GradeB'
 
 # Define paths
 in_folder_path = osp.join(root, planet, dstype, 'downsample_data', subaux)
-aux_folder_path = osp.join(root, planet, dstype, 'labels', subaux)
+#aux_folder_path = osp.join(root, planet, dstype, 'labels', subaux)
 out_folder_path = osp.join(root, planet, dstype, 'wavelet_package_transform', subaux)
 
 mkdir(out_folder_path)
@@ -32,8 +32,8 @@ for filename in tqdm(os.listdir(in_folder_path)):
     in_file_path = osp.join(in_folder_path, filename)
     df = pd.read_csv(in_file_path)
 
-    aux_file_path = osp.join(aux_folder_path, filename)
-    labeled_df = pd.read_csv(aux_file_path)  # labeled_df has two columns, 'time_rel(sec)' and 'label'
+    #aux_file_path = osp.join(aux_folder_path, filename)
+    #labeled_df = pd.read_csv(aux_file_path)  # labeled_df has two columns, 'time_rel(sec)' and 'label'
 
     # Perform Wavelet Packet Transform (WPT)
     signal = df['velocity(m/s)'].values
@@ -56,8 +56,8 @@ for filename in tqdm(os.listdir(in_folder_path)):
 
     # Twin axis to plot the label on top of the first plot
     ax1b = ax1.twinx()
-    ax1b.plot(labeled_df['time_rel(sec)'], labeled_df['label'], color='red', linewidth=0.75, label='Label')
-    ax1b.set_ylabel('Label')
+    #ax1b.plot(labeled_df['time_rel(sec)'], labeled_df['label'], color='red', linewidth=0.75, label='Label')
+    #ax1b.set_ylabel('Label')
     ax1b.set_ylim(-0.1, 1.1)  # Ensure the y-axis is appropriate for binary labels (0 or 1)
     ax1b.tick_params(axis='y', colors='red')  # Color the ticks to differentiate
     ax1b.legend(loc='upper right')  # Optional: add a legend for the label

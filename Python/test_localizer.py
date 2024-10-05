@@ -22,7 +22,7 @@ num_epochs = 2000
 learning_rate = 0.0001
 
 # Dataset and DataLoader
-test_dataset = EarthquakeDataset(data_folder='data/lunar/test/downsample_data/S12_GradeB/',
+test_dataset = EarthquakeDataset(data_folder='data/lunar/test/downsample_data/S15_GradeB/',
                                   label_folder=None, is_testing=True)
 
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
@@ -42,6 +42,10 @@ model.load_state_dict(torch.load('save/localizer/trial_2/quake_localization_mode
 
 batch = next(iter(test_loader))
 
-pred = model(batch[0].to(device)).flatten()
+#pred = model(batch[0].to(device)).flatten()
 
+pred = model(batch[0].to(device)).flatten()
 a = 1
+
+# Print the predictions
+print(dict(zip(batch[3], pred.tolist())))

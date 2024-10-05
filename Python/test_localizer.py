@@ -3,7 +3,10 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
+import os
+import numpy as np
 from datasetV2 import EarthquakeDataset
+import pandas as pd
 from nets.localizer import FPN1DLocalizer as Localizer
 #from nets.localizer import SimpleCNNLocalizer as Localizer
 
@@ -47,5 +50,20 @@ batch = next(iter(test_loader))
 pred = model(batch[0].to(device)).flatten()
 a = 1
 
-# Print the predictions
-print(dict(zip(batch[3], pred.tolist())))
+
+
+# Assuming detections is a dictionary with filenames as keys and percentages as values
+detections = dict(zip(batch[3], pred.tolist()))
+
+# Convert detections to a DataFrame for CSV writing
+detections_df = pd.DataFrame(list(detections.items()), columns=['Filename', 'Percentage'])
+
+# Define the output folder and CSV file path
+output_folder = 'data/lunar/test/detections/S15_GradeB'
+os.makedirs(output_folder, exist_ok=True)
+csv_file_path = os.path.join(output_folder, 'detections.csv')
+
+# Write the detections to a CSV file using pandas
+detections_df.to_csv(csv_file_path, index=False)
+
+print(f'Detections saved to {csv_file_path}')

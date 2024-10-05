@@ -4,8 +4,8 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from datasetV2 import EarthquakeDataset
-#from nets.localizer import FPN1DLocalizer as Localizer
-from nets.localizer import SimpleCNNLocalizer as Localizer
+from nets.localizer import FPN1DLocalizer as Localizer
+#from nets.localizer import SimpleCNNLocalizer as Localizer
 
 import psutil
 def log_memory_usage():
@@ -31,8 +31,8 @@ test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=Fa
 #model = Localizer(num_layers=7, in_channels=1, mid_channels=8, kernel_size=13).to(device)
 #model = Localizer(num_layers=3, in_channels=1, mid_channels=64, kernel_size=3).to(device)
 #model = Localizer(num_pools=10, in_channels=1, mid_channels=64, kernel_size=31).to(device)
-# model = Localizer(num_pools=4, in_channels=1, mid_channels=12, kernel_size=13).to(device)
-model = Localizer(num_layers=10, in_channels=1, mid_channels=12, kernel_size=13).to(device)
+model = Localizer(num_pools=4, in_channels=1, mid_channels=12, kernel_size=13).to(device)
+#model = Localizer(num_layers=10, in_channels=1, mid_channels=12, kernel_size=13).to(device)
 
 
 

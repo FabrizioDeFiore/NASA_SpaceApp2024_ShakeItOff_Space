@@ -13,7 +13,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Hyperparameters
 batch_size = 76
-num_epochs = 2000
+num_epochs = 100
 learning_rate = 0.0001
 
 # Dataset and DataLoader
@@ -54,13 +54,11 @@ for epoch in range(num_epochs):
 
         optimizer.step()  # Update parameters
         
-
         running_loss += loss.item()
 
         print(f'Epoch [{epoch+1}/{num_epochs}], Step [{i+1}/{len(train_loader)}], Loss: {loss.item():.9f}')
 
     print(f'Epoch [{epoch+1}/{num_epochs}] completed. Average Loss: {running_loss / len(train_loader):.9f}')
-
 
 # Save the trained model
 torch.save(model.state_dict(), 'quake_detection_model.pth')

@@ -45,7 +45,7 @@ class EarthquakeDataset(Dataset):
 
 if __name__ == "__main__": # Test Code
     # Assuming all your CSV files are stored in the folder 'data/csv_files/'
-    csv_folder = 'downsampled_signals_and_sampels/'
+    csv_folder = 'downsampled_signals_and_sampels'
     dataset = EarthquakeDataset(csv_folder)
 
     # Create a DataLoader to load the data in batches

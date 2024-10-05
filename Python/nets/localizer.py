@@ -19,7 +19,6 @@ class FPN1DLocalizer(nn.Module):
                 nn.ReLU(inplace=True)
             ))
             in_channels = mid_channels
-
         # Max pooling layers for downsampling
         self.pool = nn.AvgPool1d(kernel_size=2, stride=2)
 

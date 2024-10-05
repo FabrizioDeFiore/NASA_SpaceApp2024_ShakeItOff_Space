@@ -6,8 +6,9 @@ from torch.utils.data import DataLoader
 from dataset import EarthquakeDataset
 # from nets.localizer import FPN1DLocalizer as Localizer
 from nets.localizer import SimpleCNNLocalizer as Localizer
-
+from tools import mkdir
 import psutil
+
 def log_memory_usage():
     process = psutil.Process()
     print(f"Memory Usage: {process.memory_info().rss / (1024 ** 3)} GB")  # RSS in GB
@@ -18,20 +19,25 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Hyperparameters
 batch_size = 76
-num_epochs = 2000
+num_epochs = 200000
 learning_rate = 0.0001
 
 # Dataset and DataLoader
-train_dataset = EarthquakeDataset(csv_folder='downsampled_signals_and_sampels/S12_GradeA/')
+train_dataset = EarthquakeDataset(data_folder='data/lunar/training/downsample_data/S12_GradeA/',
+                                  label_folder='data/lunar/training/labels/S12_GradeA/')
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=False)
 
 # Model
-model = Localizer().to(device)
+model = Localizer(num_layers=10, in_channels=1, mid_channels=12, kernel_size=13).to(device)
 
 # Loss function and optimizer
 # For classification with imbalance, using CrossEntropyLoss with class weights
 criterion = nn.MSELoss()
-optimizer = optim.AdamW(model.parameters(), lr=learning_rate)
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+pth_path = "save/localizer/trial_0/"
+
+mkdir(pth_path)
 
 # Training loop
 for epoch in range(num_epochs):
@@ -68,7 +74,4 @@ for epoch in range(num_epochs):
     print(f'Epoch [{epoch+1}/{num_epochs}] completed. Average Loss: {running_loss / len(train_loader):.9f}')
 
     if epoch % 10 == 0:
-        torch.save(model.state_dict(), f'quake_localization_model_{epoch:05}.pth')
-
-
-
+        torch.save(model.state_dict(), f'{pth_path}quake_localization_model_{epoch:05}.pth')

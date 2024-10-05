@@ -14,7 +14,7 @@ def log_memory_usage():
 
 # ------------------------------------------------------------
 # Device configuration
-device = torch.device('cuda:2' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Hyperparameters
 batch_size = 76
@@ -23,7 +23,8 @@ learning_rate = 0.0001
 
 # Dataset and DataLoader
 test_dataset = EarthquakeDataset(data_folder='data/lunar/test/downsample_data/S12_GradeB/',
-                                  label_folder=None, is_testing=True)
+                                  #label_folder=None, is_testing=True)
+                                  is_testing=True)
 
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 
@@ -31,7 +32,7 @@ test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=Fa
 model = Localizer(num_layers=7, in_channels=1, mid_channels=8, kernel_size=13).to(device)
 
 # Load the saved model parameters
-model.load_state_dict(torch.load('save/localizer/trial_0/quake_localization_model_01620.pth'))
+model.load_state_dict(torch.load('save/localizer/trial_2/quake_localization_model_00930.pth'))
 
 
 batch = next(iter(test_loader))

@@ -12,8 +12,8 @@ from tools import mkdir
 
 root = 'data'
 planet = 'lunar'
-dstype = 'training'
-subaux = 'S12_GradeA'
+dstype = 'test'
+subaux = 'S12_GradeB'
 
 # Construct the path to the metadata CSV file
 in_folder_path = osp.join(root, planet, dstype, 'data', subaux)

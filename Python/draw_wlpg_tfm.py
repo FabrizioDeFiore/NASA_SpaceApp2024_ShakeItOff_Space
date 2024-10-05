@@ -12,8 +12,8 @@ from matplotlib.gridspec import GridSpec
 
 root = 'data'
 planet = 'lunar'
-dstype = 'training'
-subaux = 'S12_GradeA'
+dstype = 'test'
+subaux = 'S12_GradeB'
 
 # Define paths
 in_folder_path = osp.join(root, planet, dstype, 'downsample_data', subaux)

@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
-from dataset import EarthquakeDataset
+from datasetV2 import EarthquakeDataset
 from nets.localizer import FPN1DLocalizer as Localizer
 from tools import mkdir
 import psutil
@@ -14,7 +14,7 @@ def log_memory_usage():
 
 # ------------------------------------------------------------
 # Device configuration
-device = torch.device('cuda:4' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Hyperparameters
 batch_size = 76

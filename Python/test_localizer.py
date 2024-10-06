@@ -20,12 +20,12 @@ def log_memory_usage():
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Hyperparameters
-batch_size = 64
+batch_size = 9
 num_epochs = 2000
 learning_rate = 0.0001
 
 # Dataset and DataLoader
-test_dataset = EarthquakeDataset(data_folder='data/lunar/test/downsample_data/S15_GradeB/',
+test_dataset = EarthquakeDataset(data_folder='data/mars/test/downsample_data',
                                   label_folder=None, is_testing=True)
 
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
@@ -59,7 +59,7 @@ detections = dict(zip(batch[3], pred.tolist()))
 detections_df = pd.DataFrame(list(detections.items()), columns=['Filename', 'Percentage'])
 
 # Define the output folder and CSV file path
-output_folder = 'data/lunar/test/detections/S15_GradeB'
+output_folder = 'data/mars/test/detections'
 os.makedirs(output_folder, exist_ok=True)
 csv_file_path = os.path.join(output_folder, 'detections.csv')
 

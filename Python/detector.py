@@ -11,7 +11,7 @@ from scipy.signal import cwt, morlet
 root = 'data'
 planet = 'lunar'
 dstype = 'test'
-subaux = 'S15_GradeB'
+subaux = 'S16_GradeB'
 
 # Define paths
 in_folder_path = osp.join(root, planet, dstype, 'downsample_data', subaux)
@@ -106,6 +106,19 @@ for index, row in detections_df.iterrows():
     # Store the relative time and velocity in the detections_df DataFrame
     detections_df.at[index, 'Relative Time'] = rel_time
     detections_df.at[index, 'Velocity'] = velocity
+
+    # Extract the substring from the filename (from "evid" onwards)
+    evid_index = filename.find('evid')
+    if evid_index != -1:
+        evid_string = filename[evid_index:]
+    else:
+        evid_string = filename  # If "evid" is not found, use the whole filename
+
+    # Remove the .csv extension from the evid_string
+    evid_string = os.path.splitext(evid_string)[0]
+
+    # Store the substring in a new column in the detections_df DataFrame
+    detections_df.at[index, 'Evidence'] = evid_string
 
 # Save the updated detections_df DataFrame to the CSV file
 detections_df.to_csv(csv_file_path, index=False)

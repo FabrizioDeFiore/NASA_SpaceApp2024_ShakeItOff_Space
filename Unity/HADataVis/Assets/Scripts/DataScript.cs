@@ -15,15 +15,16 @@ public class DataScript : MonoBehaviour
 
     private void Start()
     {
-        newText = "Magnitude: " + magnitude;
+        newText = "TimeRel: " + magnitude;
         newText1 = "Velocity: " + velocity + " (m/s)";
+        newText2 = "Filename: " + filename;
     }
 
     private void Update()
     {
-        newText = "Magnitude: " + magnitude;
+        newText = "TimeRel: " + magnitude;
         newText1 = "Velocity: " + velocity + " (m/s)";
-        newText2 = filename;
+        newText2 = "Filename: " + filename;
         // Check if the newText is not empty and the magnitudeText component is assigned
         if (!string.IsNullOrEmpty(newText) && magnitudeText != null)
         {

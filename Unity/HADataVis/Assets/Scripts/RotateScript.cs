@@ -11,10 +11,20 @@ public class RotateScript : MonoBehaviour
 
     void Start()
     {
+        gameObject.SetActive(false);
         random1 = new System.Random();
         // Store the original rotation
         originalRotation = transform.rotation;
         i = 0;
+    }
+
+    public void Visible()
+    {
+        gameObject.SetActive(true);
+    }
+    public void Invisible()
+    {
+        gameObject.SetActive(false);
     }
 
     public void Rotate()

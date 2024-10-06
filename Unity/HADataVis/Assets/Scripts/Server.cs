@@ -21,6 +21,10 @@ public class MyListenerRealTimeComunicationsV4 : MonoBehaviour
     public TMP_Text timeRelText;
     public TMP_Text velText;
 
+    public string filename;
+    public string timeRel;
+    public string vel;
+
     private Thread receiveThread;
     private TcpListener server;
     private TcpClient client;
@@ -117,6 +121,17 @@ public class MyListenerRealTimeComunicationsV4 : MonoBehaviour
     }
 
 
+    //public static (string, string, string) OutputStrings()
+    //{
+    //    string str1 = filename;
+    //    string str2 = timeRel;
+    //    string str3 = vel;
+
+    //    // Return the strings as a tuple
+    //    return (str1, str2, str3);
+    //}
+
+
 
     public static float CalculateYPosition(float yScale){
         // This function calculates the y position using linear interpolation.
@@ -150,7 +165,7 @@ public class MyListenerRealTimeComunicationsV4 : MonoBehaviour
             //float normalizedData_yScale = data / 100f;
             //float yPosition = CalculateYPosition(normalizedData_yScale);
             //UpdateObject(objectToUpdate1, normalizedData_yScale, yPosition);
-            filenameText.text = data.ToString("F2");
+            filename = data.ToString("F2");
             //chpTemp1Text.text = normalizedData_yScale.ToString("F4");
         }
         
@@ -159,7 +174,7 @@ public class MyListenerRealTimeComunicationsV4 : MonoBehaviour
             //float normalizedData_yScale = data / 100f;
             //float yPosition = CalculateYPosition(normalizedData_yScale);
             //UpdateObject(objectToUpdate2, normalizedData_yScale, yPosition);
-            timeRelText.text = data.ToString("F2")+ (" s");
+            timeRel = data.ToString("F2")+ (" s");
             //loopTemp1Text.text = normalizedData_yScale.ToString("F4");
         }
 
@@ -168,7 +183,7 @@ public class MyListenerRealTimeComunicationsV4 : MonoBehaviour
             //float normalizedData_yScale = data * 2.5f  ;  // Just because it's a very smalll value, so this make it the filling nrmalized to the others, change this value as needed
             //float yPosition = CalculateYPosition(normalizedData_yScale);
             //UpdateObject(objectToUpdate3, normalizedData_yScale, yPosition);
-            velText.text = (data).ToString("F2")+ (" m/s"); 
+            vel = (data).ToString("F2")+ (" m/s"); 
             //stoomText.text = normalizedData_yScale.ToString("F4");
         }
     }

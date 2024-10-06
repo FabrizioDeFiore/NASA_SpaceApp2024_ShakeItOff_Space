@@ -75,7 +75,7 @@ Material:
     - _Parallax: 0.02
     - _PulsationDuration: 5.8
     - _PulseDuration: 4.53
-    - _Radius: 0.03
+    - _Radius: 0.13
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4595209731072635275
+--- !u!1 &7750784186977817301
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1353047683917562344}
-  - component: {fileID: 3527578290255825599}
+  - component: {fileID: 6159789148432606150}
+  - component: {fileID: 6508218218885899737}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1353047683917562344
+--- !u!4 &6159789148432606150
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4595209731072635275}
+  m_GameObject: {fileID: 7750784186977817301}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 233.09541, y: -52.577396, z: -253.4744}
@@ -32,13 +32,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3527578290255825599
+--- !u!114 &6508218218885899737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4595209731072635275}
+  m_GameObject: {fileID: 7750784186977817301}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fa96381f3c60f49b82a117dceb8ab5, type: 3}
@@ -48,26 +48,28 @@ MonoBehaviour:
   quakeScript: {fileID: 0}
   rawImage: {fileID: 0}
   animControl: {fileID: 0}
+  animControl2: {fileID: 0}
+  rotateScript: {fileID: 0}
   tremorEvents:
-  - picture: {fileID: 2800000, guid: 1dc957381c5f61847b5469dbedd02bb0, type: 3}
+  - picture: {fileID: 2800000, guid: a612621a2c269a64f94b045355e8f676, type: 3}
     duration: 5
     intensity: 0.2
-    startPercentage: 0
+    startPercentage: -3.79
     magnitude: 11.06
     velocity: 4.8
-  - picture: {fileID: 2800000, guid: 99184d680b8006e49bb8dfb890aa0b9b, type: 3}
+  - picture: {fileID: 2800000, guid: a612621a2c269a64f94b045355e8f676, type: 3}
     duration: 5
     intensity: 0.25
     startPercentage: 50
     magnitude: 11.18
     velocity: 5.5
-  - picture: {fileID: 2800000, guid: 6227c4bf00c41934189a7f429428dde0, type: 3}
+  - picture: {fileID: 2800000, guid: a612621a2c269a64f94b045355e8f676, type: 3}
     duration: 4.5
     intensity: 0.15
     startPercentage: 70
     magnitude: 10.97
     velocity: 4.3
-  - picture: {fileID: 2800000, guid: d52cac1db2583b047a4c6238f829eb58, type: 3}
+  - picture: {fileID: 2800000, guid: a612621a2c269a64f94b045355e8f676, type: 3}
     duration: 2
     intensity: 0.3
     startPercentage: 45

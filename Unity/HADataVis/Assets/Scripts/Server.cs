@@ -154,21 +154,21 @@ public class MyListenerRealTimeComunicationsV4 : MonoBehaviour
             //chpTemp1Text.text = normalizedData_yScale.ToString("F4");
         }
         
-        if (loopTemp1Queue.Count > 0){
-            float data = loopTemp1Queue.Dequeue();
+        if (timeRelQueue.Count > 0){
+            float data = timeRelQueue.Dequeue();
             //float normalizedData_yScale = data / 100f;
             //float yPosition = CalculateYPosition(normalizedData_yScale);
             //UpdateObject(objectToUpdate2, normalizedData_yScale, yPosition);
-            loopTemp1Text.text = data.ToString("F2")+ (" s");
+            timeRelText.text = data.ToString("F2")+ (" s");
             //loopTemp1Text.text = normalizedData_yScale.ToString("F4");
         }
 
-        if (stoomQueue.Count > 0){
-            float data = stoomQueue.Dequeue();
+        if (velQueue.Count > 0){
+            float data = velQueue.Dequeue();
             //float normalizedData_yScale = data * 2.5f  ;  // Just because it's a very smalll value, so this make it the filling nrmalized to the others, change this value as needed
             //float yPosition = CalculateYPosition(normalizedData_yScale);
             //UpdateObject(objectToUpdate3, normalizedData_yScale, yPosition);
-            stoomText.text = (data).ToString("F2")+ (" m/s"); 
+            velText.text = (data).ToString("F2")+ (" m/s"); 
             //stoomText.text = normalizedData_yScale.ToString("F4");
         }
     }

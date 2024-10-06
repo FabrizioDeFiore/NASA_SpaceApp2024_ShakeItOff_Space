@@ -8,6 +8,7 @@ public class TremorEvent
     public float duration;            // Duration of the tremor
     public float intensity;           // Intensity of the tremor
     public float startPercentage;     // Percentage at which the tremor appears on the graph
+    public string filename;           // Name of the file
     public double magnitude;           // Magnitude of the tremor
     public double velocity;            // Velocity of the tremor    
 }
@@ -23,6 +24,7 @@ public class GlobalController : MonoBehaviour
     public RawImage rawImage;
     public AnimControl animControl;
     public AnimControl animControl2;
+    public RotateScript rotateScript;
     public TremorEvent[] tremorEvents; // Array of tremor events
     int i = 0;
     int j = 0;
@@ -56,6 +58,7 @@ public class GlobalController : MonoBehaviour
             }
             quakeHasStarted = false;
             UpdateTremorEvent();
+            rotateScript.Rotate();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -74,6 +77,7 @@ public class GlobalController : MonoBehaviour
             }
             quakeHasStarted = false;
             UpdateTremorEvent();
+            rotateScript.Rotate();
         }
 
         if (progress > tremorEvents[i].startPercentage && quakeHasStarted)
@@ -109,6 +113,7 @@ public class GlobalController : MonoBehaviour
         rawImage.texture = tremorEvents[i].picture;
         dataScript.magnitude = tremorEvents[i].magnitude;
         dataScript.velocity = tremorEvents[i].velocity;
+        dataScript.filename = tremorEvents[i].filename;
         quakeScript.tremorIntensity = tremorEvents[i].intensity;
         quakeScript.tremorDuration = tremorEvents[i].duration;
         animControl.ResetAnimation();

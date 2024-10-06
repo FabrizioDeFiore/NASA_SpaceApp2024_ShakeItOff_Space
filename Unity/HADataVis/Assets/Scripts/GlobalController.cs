@@ -84,9 +84,18 @@ public class GlobalController : MonoBehaviour
             rotateScript.Invisible();
         }
 
-        if ((progress + 7.66f) > tremorEvents[i].startPercentage && quakeHasStarted)
+            if ((progress + 2) > tremorEvents[i].startPercentage)
         {
             rotateScript.Visible();
+        }
+            else
+        {
+            rotateScript.Invisible();
+        }
+
+            if ((progress + 7.66f) > tremorEvents[i].startPercentage && quakeHasStarted)
+        {
+            
             quakeScript.StartTremor();
             quakeHasStarted = false;
         }
@@ -106,7 +115,6 @@ public class GlobalController : MonoBehaviour
             }
             else
             {
-                rotateScript.Visible();
                 animControl.StartAnimation();         
                 animControl2.StartAnimation();                 
                 quakeHasStarted = true;

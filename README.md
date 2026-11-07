@@ -1,13 +1,32 @@
-# Seismic Detection around the space
-**Third Place in the NASA Space Apps Challenge 2024**
-## Challenge
-**Seismic Detection Across the Solar System** <br>
-Write a computer program to analyze real data from the Apollo missions and the Mars InSight Lander to identify seismic quakes within the noise
-## Project Description
->This project represents a significant advancement in lunar seismology, utilizing a neural network to effectively differentiate between lunar quakes and background noise. The model's high accuracy and innovative architecture contributed to a third-place finish in a hackathon, demonstrating its potential for groundbreaking applications in lunar exploration and research.
-- Accurate Quake Detection<br>
-  The neural network is highly proficient in identifying lunar quakes, even in challenging conditions with low signal-to-noise ratios. This accuracy is crucial for understanding the moon's internal structure and seismic activity.
-- Revolutionary Architecture<br>
- The model's unique architecture is a key factor in its success. Its design likely incorporates advanced techniques like convolutional neural networks (CNNs) or Fully Connected layers, which are well-suited for processing time-series data such as seismic signals.
-- 3D Data Visualization<br>
- The inclusion of a Unity-based 3D visualization tool provides a powerful means to explore and analyze the detected lunar quakes in a visually immersive environment. This can aid in understanding the spatial distribution of quakes, identifying potential sources, and correlating seismic events with other lunar phenomena.
+# Seismic Detection Across the Solar System
+
+**3rd place, NASA Space Apps Challenge 2024 (Athlone)**
+
+## The challenge
+
+[Seismic Detection Across the Solar System](https://www.spaceappschallenge.org/): write a program that analyses real seismic data from the Apollo missions and the Mars InSight lander, and identifies quakes within the noise.
+
+## What we built
+
+In 48 hours, a team of two built:
+
+- **A neural network** that classifies segments of Apollo lunar seismic data as *quake* or *noise*.
+- **A Unity 3D viewer** for exploring the detected quakes visually.
+
+## How it works
+
+1. The raw seismic signals are split into time windows and preprocessed.
+2. A neural network trained on the catalogued quakes in the challenge dataset labels each window as quake or noise.
+3. The detections are exported and loaded into the Unity viewer.
+
+## Results and limitations
+
+The model picked out catalogued quakes in the Apollo test data well enough to place third. It's a hackathon prototype, though, not a validated scientific tool:
+
+- It was trained and tested on a small dataset, so it hasn't been checked on new data.
+- We focused on lunar data and didn't get to apply it properly to the Mars InSight data.
+- With more time, we'd compare it against classical detection methods such as STA/LTA and tune it for noisier signals.
+
+## Team
+
+Fabrizio De Fiore (team lead) and [teammate's name].

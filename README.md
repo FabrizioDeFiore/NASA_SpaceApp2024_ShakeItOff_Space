@@ -27,6 +27,3 @@ The model picked out catalogued quakes in the Apollo test data well enough to pl
 - We focused on lunar data and didn't get to apply it properly to the Mars InSight data.
 - With more time, we'd compare it against classical detection methods such as STA/LTA and tune it for noisier signals.
 
-## Team
-
-Fabrizio De Fiore (team lead) and [teammate's name].
